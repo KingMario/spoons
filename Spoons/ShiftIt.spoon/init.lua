@@ -74,6 +74,11 @@ hs.hotkey.bind(mash, 's', function() move('topRight') end)
 hs.hotkey.bind(mash, 'z', function() move('bottomLeft') end)
 hs.hotkey.bind(mash, 'x', function() move('bottomRight') end)
 
+hs.hotkey.bind(mash, 'h', function() move('topLeft') shiftScreen(true) end)
+hs.hotkey.bind(mash, 'j', function() move('topRight') shiftScreen(true) end)
+hs.hotkey.bind(mash, 'n', function() move('bottomLeft') shiftScreen(true) end)
+hs.hotkey.bind(mash, 'm', function() move('bottomRight') shiftScreen(true) end)
+
 hs.hotkey.bind(mash, '[', function() move('topLeft2') end)
 hs.hotkey.bind(mash, ']', function() move('topRight1') end)
 hs.hotkey.bind(mash, ';', function() move('left2') end)
@@ -83,6 +88,8 @@ hs.hotkey.bind(mash, '/', function() move('bottomRight1') end)
 
 hs.hotkey.bind(mash, 'q', function() move('maximum', n) end)
 
+hs.hotkey.bind(mash, 'y', function() move('maximum', n)  shiftScreen(true) end)
+
 hs.hotkey.bind({'option'}, 'TAB', function () shiftScreen(true) end)
 hs.hotkey.bind(mash, 'TAB', function () shiftScreen(false) end)
 
@@ -90,5 +97,7 @@ hs.hotkey.bind(mash, 'w', function () toggleFullScreen() end)
 hs.hotkey.bind(mash, 'd', function () resize(true) end)
 hs.hotkey.bind(mash, 'e', function () resize(false) end)
 hs.hotkey.bind(mash, 'c', function () centerOnScreen() end)
+
+hs.hotkey.bind(mash, ',', function () centerOnScreen() shiftScreen(true) end)
 
 return obj
