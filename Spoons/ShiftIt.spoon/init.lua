@@ -54,6 +54,11 @@ local shiftScreen = function (next)
   local win = hs.window.focusedWindow()
   local screenToMove = next and win:screen():next() or win:screen():previous()
   win:moveToScreen(screenToMove)
+
+  local mode = screenToMove:currentMode()
+  local screenCenter = {x = 0.50 * mode.w, y = 0.50 * mode.h}
+
+  hs.mouse.setRelativePosition(screenCenter, screenToMove)
 end
 
 local toggleFullScreen = function()
