@@ -91,9 +91,9 @@ hs.hotkey.bind(mash, '\'', function() move('right1') end)
 hs.hotkey.bind(mash, '.', function() move('bottomLeft2') end)
 hs.hotkey.bind(mash, '/', function() move('bottomRight1') end)
 
-hs.hotkey.bind(mash, 'q', function() move('maximum', n) end)
+hs.hotkey.bind(mash, 'q', function() move('maximum') end)
 
-hs.hotkey.bind(mash, 'y', function() move('maximum', n)  shiftScreen(true) end)
+hs.hotkey.bind(mash, 'y', function() move('maximum')  shiftScreen(true) end)
 
 hs.hotkey.bind({'option'}, 'TAB', function () shiftScreen(true) end)
 hs.hotkey.bind(mash, 'TAB', function () shiftScreen(false) end)
