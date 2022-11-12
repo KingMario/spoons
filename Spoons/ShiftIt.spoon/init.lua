@@ -63,8 +63,7 @@ end
 
 local toggleFullScreen = function()
   local win = hs.window.focusedWindow()
-  local currentState = win:isFullScreen()
-  win:setFullScreen(not currentState)
+  win:toggleFullScreen()
 end
 
 local centerOnScreen = function () hs.window.focusedWindow():centerOnScreen() end
