@@ -2,7 +2,7 @@ local obj = {}
 obj.__index = obj
 
 -- Metadata
-obj.name = "StageManager"
+obj.name = "StageToggler"
 obj.version = "1.0.0"
 obj.license = "MIT - https://opensource.org/licenses/MIT"
 
