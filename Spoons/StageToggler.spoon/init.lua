@@ -22,7 +22,7 @@ function toggleStageManager ()
           windowManagerDomain,
           globallyEnabledKey,
           '-int',
-          string.find(stdOut, '0') and '1' or '0'
+          string.match(stdOut, '%d') == '0' and '1' or '0'
         }
       ):start()
     end,
