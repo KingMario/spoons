@@ -2,24 +2,24 @@ local obj = {}
 obj.__index = obj
 
 local presets = {
-  left = {x = 0.14, y = 0.00, w = 0.43, h = 1.00},
-  right = {x = 0.57, y = 0.00, w = 0.43, h = 1.00},
-  up = {x = 0.14, y = 0.00, w = 0.86, h = 0.50},
-  down = {x = 0.14, y = 0.50, w = 0.86, h = 0.50},
+  left = {x = 0, y = 0, w = 0.5, h = 1},
+  right = {x = 0.5, y = 0, w = 0.5, h = 1},
+  up = {x = 0, y = 0, w = 1, h = 0.50},
+  down = {x = 0, y = 0.50, w = 1, h = 0.50},
   
-  topLeft = {x = 0.14, y = 0.00, w = 0.43, h = 0.50},
-  topRight = {x = 0.57, y = 0.00, w = 0.43, h = 0.50},
-  bottomLeft = {x = 0.14, y = 0.50, w = 0.43, h = 0.50},
-  bottomRight = {x = 0.57, y = 0.50, w = 0.43, h = 0.50},
+  topLeft = {x = 0, y = 0, w = 0.5, h = 0.50},
+  topRight = {x = 0.5, y = 0, w = 0.5, h = 0.50},
+  bottomLeft = {x = 0, y = 0.50, w = 0.5, h = 0.50},
+  bottomRight = {x = 0.5, y = 0.50, w = 0.5, h = 0.50},
   
-  topLeft2 = {x = 0.14, y = 0.00, w = 0.57, h = 0.50},
-  topRight1 = {x = 0.71, y = 0.00, w = 0.29, h = 0.50},
-  left2 = {x = 0.14, y = 0.00, w = 0.57, h = 1.00},
-  right1 = {x = 0.71, y = 0.00, w = 0.29, h = 1.00},
-  bottomLeft2 = {x = 0.14, y = 0.50, w = 0.57, h = 0.50},
-  bottomRight1 = {x = 0.71, y = 0.50, w = 0.29, h = 0.50},
+  topLeft2 = {x = 0, y = 0, w = 0.5, h = 0.50},
+  topRight1 = {x = 0.67, y = 0, w = 0.33, h = 0.50},
+  left2 = {x = 0, y = 0, w = 0.5, h = 1},
+  right1 = {x = 0.67, y = 0, w = 0.33, h = 1},
+  bottomLeft2 = {x = 0, y = 0.50, w = 0.5, h = 0.50},
+  bottomRight1 = {x = 0.67, y = 0.50, w = 0.33, h = 0.50},
   
-  maximum = {x = 0.14, y = 0.00, w = 0.86, h = 1.00}
+  maximum = {x = 0, y = 0, w = 1, h = 1}
 }
 
 local mash = {'shift', 'option'}
