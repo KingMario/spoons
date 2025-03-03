@@ -13,20 +13,30 @@ function obj:start()
     self.eventtap = hs.eventtap.new({hs.eventtap.event.types.scrollWheel}, function(event)
         local flags = event:getFlags()
         if flags.cmd then
+            local mousePosition = hs.mouse.getAbsolutePosition()
+
+            local windows = hs.window.orderedWindows()
+
+            local windowUnderPointer = nil
+            for _, window in ipairs(windows) do
+                local frame = window:frame()
+                if hs.geometry(mousePosition):inside(frame) then
+                    windowUnderPointer = window
+                    break
+                end
+            end
+
+            local focusedWindow = hs.window.focusedWindow()
+
+            if windowUnderPointer and windowUnderPointer ~= focusedWindow then
+                windowUnderPointer:focus()
+            end
+
             local scrollDirection = event:getProperty(hs.eventtap.event.properties.scrollWheelEventDeltaAxis1)
 
-            -- Dispatch a click event
-            local clickEvent = hs.eventtap.event.newMouseEvent(hs.eventtap.event.types.leftMouseDown,
-                hs.mouse.getAbsolutePosition())
-            clickEvent:post()
-            hs.timer.usleep(1000) -- Small delay to ensure the click is registered
-            hs.eventtap.event.newMouseEvent(hs.eventtap.event.types.leftMouseUp, hs.mouse.getAbsolutePosition()):post()
-
             if scrollDirection < 0 then
-                -- Scroll up, send cmd + =
                 hs.eventtap.keyStroke({"cmd"}, "=")
             elseif scrollDirection > 0 then
-                -- Scroll down, send cmd + -
                 hs.eventtap.keyStroke({"cmd"}, "-")
             end
             return true -- Consume the event
